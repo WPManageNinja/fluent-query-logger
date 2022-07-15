@@ -10,7 +10,6 @@ class AdminMenuHandler
     public function add()
     {
         $capability = 'manage_options';
-
         add_submenu_page(
             'tools.php',
             __('Fluent Query Logs', 'fluent-query-logger'),
@@ -68,23 +67,11 @@ class AdminMenuHandler
 
         $slug = $app->config->get('app.slug');
 
-        wp_enqueue_style(
-            $slug . '_admin_app', $assets . '/admin/css/admin.css'
-        );
-
         do_action($slug . '_loading_app');
 
         wp_enqueue_script(
-            $slug . '_admin_app_start',
-            $assets . '/admin/js/start.js',
-            array(),
-            '1.0',
-            true
-        );
-
-        wp_enqueue_script(
             $slug . '_global_admin',
-            $assets . 'admin/js/global_admin.js',
+            $assets . 'admin/js/app.js',
             array('jquery'),
             '1.0',
             true
@@ -99,7 +86,7 @@ class AdminMenuHandler
             $expensive = QM_DB_EXPENSIVE;
         }
 
-        wp_localize_script($slug . '_admin_app_start', 'fluentFrameworkAdmin', [
+        wp_localize_script($slug . '_global_admin', 'fluentFrameworkAdmin', [
             'slug'         => $slug = $app->config->get('app.slug'),
             'nonce'        => wp_create_nonce($slug),
             'rest'         => $this->getRestInfo($app),

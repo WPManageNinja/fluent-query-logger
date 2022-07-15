@@ -1,4 +1,4 @@
-const request = function(method, route, data = {}) {
+const request = function (method, route, data = {}) {
     const url = `${window.fluentFrameworkAdmin.rest.url}/${route}`;
 
     const headers = {'X-WP-Nonce': window.fluentFrameworkAdmin.rest.nonce};
@@ -8,11 +8,17 @@ const request = function(method, route, data = {}) {
         method = 'POST';
     }
 
-    return window.jQuery.ajax({
-        url: url,
-        type: method,
-        data: data,
-        headers: headers
+    data.query_timestamp = Date.now();
+
+    return new Promise((resolve, reject) => {
+        window.jQuery.ajax({
+            url: url,
+            type: method,
+            data: data,
+            headers: headers
+        })
+            .then(response => resolve(response))
+            .fail(errors => reject(errors.responseJSON));
     });
 }
 
@@ -37,6 +43,6 @@ export default {
 jQuery(document).ajaxSuccess((event, xhr, settings) => {
     const nonce = xhr.getResponseHeader('X-WP-Nonce');
     if (nonce) {
-        window.fluentFrameworkAdmin.rest.nonce = nonce;
+        window.fluentFrameworkAdmin.rest_nonce = nonce;
     }
 });

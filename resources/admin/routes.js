@@ -1,7 +1,7 @@
 import Logs from './Components/Logs.vue';
 import Settings from './Components/Setttings.vue';
 
-export default [
+export var routes = [
     {
         path: '/',
         name: 'logs',
@@ -19,4 +19,3 @@ export default [
         }
     }
 ];
-

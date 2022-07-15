@@ -3,7 +3,7 @@
         <div class="box dashboard_box">
             <div class="box_header" style="padding: 20px 15px;font-size: 16px;">
                 Logs
-                <el-button @click="fetchLogs()" size="mini">refresh</el-button>
+                <el-button @click="fetchLogs()" size="small">refresh</el-button>
             </div>
             <div class="log_filters">
                 <div class="log_filter">
@@ -12,7 +12,7 @@
                 </div>
                 <div class="log_filter">
                     <label class="filter_title">Component</label>
-                    <el-select @change="fetchLogs()" size="mini" clearable filterable v-model="filter.context">
+                    <el-select @change="fetchLogs()" size="small" clearable filterable v-model="filter.context">
                         <el-option v-for="item in components" :key="item" :value="item" :label="item"></el-option>
                     </el-select>
                 </div>
@@ -54,9 +54,9 @@
                 <el-table-column fixed="right" label="Action" width="90">
                     <template #default="scope">
                         <el-button @click="changeStatus(scope.row.id, 'ignored', scope.$index)"
-                                   v-if="scope.row.status == 'new'" size="mini" type="danger" plain>ignore
+                                   v-if="scope.row.status == 'new'" size="small" type="danger" plain>ignore
                         </el-button>
-                        <el-button @click="changeStatus(scope.row.id, 'new', scope.$index)" v-else size="mini"
+                        <el-button @click="changeStatus(scope.row.id, 'new', scope.$index)" v-else size="small"
                                    type="success" plain>re-watch
                         </el-button>
                     </template>
@@ -66,12 +66,12 @@
                 <el-col :md="12" :xs="24">
                     <el-popconfirm @confirm="deleteAllLogs()" title="Are you sure to delete all the logs?">
                         <template #reference>
-                            <el-button v-loading="deleting" size="mini" type="danger">Delete All Logs</el-button>
+                            <el-button v-loading="deleting" size="small" type="danger">Delete All Logs</el-button>
                         </template>
                     </el-popconfirm>
                 </el-col>
                 <el-col :md="12" :xs="24">
-                    <div class="fql_pagi text-align-right">
+                    <div class="fql_pagi text-align-right" style="float: right;">
                         <el-pagination @current-change="changePage"
                                        :current-page="paginate.page"
                                        :page-size="paginate.per_page"
@@ -86,13 +86,9 @@
 </template>
 
 <script type="text/babel">
-import Confirm from "@/admin/Pieces/Confirm";
 
 export default {
     name: 'Logs',
-    components: {
-        Confirm
-    },
     data() {
         return {
             logs: [],
@@ -128,7 +124,7 @@ export default {
                 .catch((errors) => {
                     this.$handleError(errors);
                 })
-                .always(() => {
+                .finally(() => {
                     this.deleting = false;
                 });
         },
@@ -170,7 +166,7 @@ export default {
                 .catch((errors) => {
                     this.$handleError(errors);
                 })
-                .always(() => {
+                .finally(() => {
                     this.loading = false;
                 });
         },

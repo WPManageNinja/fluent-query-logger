@@ -51,7 +51,7 @@ export default {
                 .catch(errors => {
                     this.$handleError(errors);
                 })
-                .always(() => {
+                .finally(() => {
                     this.installing = false;
                 });
         }

@@ -52,7 +52,7 @@ export default {
                 .catch((errors) => {
                     this.$handleError(errors)
                 })
-                .always(() => {
+                .finally(() => {
                     this.loading = false;
                 });
         },
@@ -69,7 +69,7 @@ export default {
                 .catch((errors) => {
                     this.$handleError(errors)
                 })
-                .always(() => {
+                .finally(() => {
                     this.saving = false;
                 });
         }
