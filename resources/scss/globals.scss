@@ -1,0 +1,88 @@
+// text colors
+.text {
+    &-primary {
+        color: #20a0ff
+    }
+
+    &-success {
+        color: #13ce66
+    }
+
+    &-info {
+        color: #50bfff
+    }
+
+    &-warning {
+        color: #f7ba2a
+    }
+
+    &-bg-highlight {
+        background: #EEEEEE;
+    }
+
+    &-danger {
+        color: #ff4949
+    }
+
+    &-align {
+        &-right {
+            text-align: right;
+        }
+
+        &-center {
+            text-align: center;
+        }
+    }
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.route_wrapper {
+    margin-right: 20px;
+}
+
+.box_narrow {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.box_wrapper {
+    box-sizing: border-box;
+    * {
+        box-sizing: border-box;
+    }
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    .box_header {
+        display: block;
+        width: auto;
+        border-bottom: 1px solid #e3e8ee;
+        clear: both;
+        overflow: hidden;
+        margin: 0;
+        padding: 10px 15px;
+        background-color: #f7fafc;
+        font-weight: 700;
+        color: #697386;
+        .box_head {
+            float: left;
+            h3 {
+                display: inline-block;
+                margin: 8px 20px 8px 0;
+                padding: 0;
+                font-size: 20px;
+            }
+        }
+        .box_actions {
+            float: right;
+        }
+    }
+    .box_body {
+        background: #fff;
+        display: block;
+        overflow: hidden;
+    }
+}

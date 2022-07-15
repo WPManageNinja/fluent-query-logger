@@ -1,0 +1,203 @@
+@forward "~element-plus/theme-chalk/src/common/var.scss" with (
+  $colors: (
+    "primary": (
+      "base": #136bf5,
+    ),
+  ),
+);
+@use '~element-plus/packages/theme-chalk/src/index';
+
+//@import "~element-plus/theme-chalk/src/row.scss";
+//@import "~element-plus/theme-chalk/src/col.scss";
+//@import "~element-plus/theme-chalk/src/table.scss";
+//@import "~element-plus/theme-chalk/src/table-column.scss";
+//@import "~element-plus/theme-chalk/src/loading.scss";
+//@import "~element-plus/theme-chalk/src/pagination.scss";
+//@import "~element-plus/theme-chalk/src/icon.scss";
+//@import "~element-plus/theme-chalk/src/button.scss";
+//@import "~element-plus/theme-chalk/src/dialog.scss";
+//@import "~element-plus/theme-chalk/src/skeleton.scss";
+//@import "~element-plus/theme-chalk/src/radio-button.scss";
+//@import "~element-plus/theme-chalk/src/radio.scss";
+//@import "~element-plus/theme-chalk/src/radio-group.scss";
+//@import "~element-plus/theme-chalk/src/switch.scss";
+//@import "~element-plus/theme-chalk/src/upload.scss";
+//@import "~element-plus/theme-chalk/src/notification.scss";
+//@import "~element-plus/theme-chalk/src/tabs.scss";
+//@import "~element-plus/theme-chalk/src/tab-pane.scss";
+//@import "~element-plus/theme-chalk/src/form.scss";
+//@import "~element-plus/theme-chalk/src/form-item.scss";
+//@import "~element-plus/theme-chalk/src/message-box.scss";
+//@import "~element-plus/theme-chalk/src/select.scss";
+//@import "~element-plus/theme-chalk/src/input.scss";
+//@import "~element-plus/theme-chalk/src/option.scss";
+//@import "~element-plus/theme-chalk/src/tooltip.scss";
+//@import "~element-plus/theme-chalk/src/popconfirm.scss";
+//@import "~element-plus/theme-chalk/src/drawer.scss";
+//@import "~element-plus/theme-chalk/src/dropdown.scss";
+//@import "~element-plus/theme-chalk/src/dropdown-item.scss";
+//@import "~element-plus/theme-chalk/src/dropdown-menu.scss";
+//@import "~element-plus/theme-chalk/src/date-picker.scss";
+//@import "~element-plus/theme-chalk/src/select-v2.scss";
+//@import "~element-plus/theme-chalk/src/breadcrumb.scss";
+//@import "~element-plus/theme-chalk/src/breadcrumb-item.scss";
+
+// customize element ui css here
+.el {
+    &-select {
+        width: 100%;
+
+        input {
+            background: transparent;
+        }
+
+        &-multiple {
+            input {
+                height: 40px !important;
+            }
+        }
+    }
+
+    &-dialog {
+        margin-top: 38px !important;
+
+        &__body {
+            padding: 15px 20px 15px 20px;
+        }
+    }
+
+    &-form-item {
+        &__label {
+            padding: initial !important;
+        }
+    }
+
+    &-tag + &-tag {
+        margin-left: 10px;
+    }
+
+    &-tag {
+        &--white {
+            background: white;
+            color: black;
+            border-color: white;
+
+            .el-tag__close {
+                color: #909399;
+
+                &:hover {
+                    background-color: #909399;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    &-popover {
+        padding: 10px;
+        text-align: left;
+
+        .action-buttons {
+            margin: 0;
+            text-align: center;
+        }
+    }
+
+    &-button {
+        &--mini {
+            padding: 4px;
+        }
+    }
+
+    &-fluid {
+        width: 100% !important;
+    }
+}
+
+.el-dropdown-menu {
+    padding: 0 15px;
+    list-style: none;
+
+    li {
+        margin-bottom: 10px;
+    }
+}
+
+
+.el-overlay {
+    @media all and (max-width: 1000px) {
+        .el-dialog {
+            min-width: 80%;
+        }
+    }
+}
+
+.el-date-editor .el-range-separator {
+    width: auto;
+}
+
+
+.el-dialog {
+    margin-top: 78px !important;
+
+    .el-dialog__header {
+        display: block;
+        overflow: hidden;
+        background: #f5f5f5;
+        border: 1px solid #ddd;
+        padding: 10px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    .dialog-footer {
+        padding: 10px 20px 10px;
+        text-align: right;
+        box-sizing: border-box;
+        background: #f5f5f5;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        width: auto;
+        display: block;
+        margin: 0 -20px -20px;
+    }
+}
+
+
+.el-table .cell pre.sql_pre {
+    margin: 0;
+    padding: 0;
+    text-overflow: unset;
+    word-break: break-word;
+    white-space: break-spaces;
+    line-height: 130%;
+    font-size: 90%;
+    max-height: 100px;
+    overflow: auto;
+}
+
+.log_filters {
+    padding: 15px;
+    background: white;
+    margin-bottom: 15px;
+    .log_filter {
+        display: inline-block;
+        margin-right: 20px;
+        > label {
+            font-weight: 500;
+            margin-bottom: 10px;
+            display: block;
+        }
+    }
+}
+
+.fframe_body {
+    margin-right: 20px;
+}
+.box_body {
+    padding: 15px;
+}
+
+.el-table .row_expensive {
+    background: #ffeff0;
+}
