@@ -1,12 +1,12 @@
 {
-    "name": "fluent-cart",
+    "name": "fluent-query-logger",
     "version": "1.0.0",
     "author": "wpmanageninja",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/wpmanageninja/fluent-cart/issues"
+        "url": "https://github.com/wpmanageninja/fluent-query-logger/issues"
     },
-    "homepage": "https://github.com/wpmanageninja/fluent-cart#readme",
+    "homepage": "https://github.com/wpmanageninja/fluent-query-logger#readme",
     "dependencies": {
         "@element-plus/icons-vue": "^1.1.4",
         "@wordpress/hooks": "^3.1.1",
