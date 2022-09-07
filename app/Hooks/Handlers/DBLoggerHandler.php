@@ -30,8 +30,10 @@ class DBLoggerHandler
             return false;
         }
 
-        $dbq = \QM_Collectors::get('db_queries');
-        $data = $dbq->get_data();
+        if ( class_exists('\QM_Collectors', true) ) {
+            $dbq = \QM_Collectors::get('db_queries');
+            $data = $dbq->get_data();
+        }
 
         if (empty($data['dbs']['$wpdb']) || empty($data['dbs']['$wpdb']->rows)) {
             return false;
