@@ -192,7 +192,7 @@ $bodyBg: #f1f2f5;
 @import "~element-plus/theme-chalk/el-loading.css";
 @import "~element-plus/theme-chalk/el-message-box.css";
 
-.el-table .cell pre.sql_pre {
+.el-table pre.sql_pre {
   margin: 0;
   padding: 0;
   text-overflow: unset;
@@ -202,6 +202,8 @@ $bodyBg: #f1f2f5;
   font-size: 90%;
   max-height: 100px;
   overflow: auto;
+  word-wrap: break-word;
+
 }
 
 .log_filters {
